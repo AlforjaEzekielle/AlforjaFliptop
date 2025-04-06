@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlipTop Battle MCs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: darkred;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #222;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        nav {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+            font-size: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: darkred;
+        }
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin: 10px 0 0 0;
+            font-size: 2rem;
+        }
+        .intro {
+            background-color: #550000;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .mc-card {
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .mc-card:hover {
+            transform: scale(1.05);
+        }
+        .mc-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background-color: #555;
+        }
+        .mc-card h2 {
+            margin: 10px 0 0 0;
+            font-size: 1.5rem;
+        }
+        footer {
+            background-color: #222;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            background-color: #333;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="fli.jpg" alt="FlipTop Logo Placeholder">
+    <h1>Isabuhay Champions</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">History</a>
+    <a href="#">Champions</a>
+    <a href="#">About</a>
+</nav>
+
+<div class="intro">
+    <p>FlipTop Battle League is the Philippines' premier rap battle platform, established in 2010. It has grown to become an iconic scene where MCs showcase their lyrical skills, creativity, and wit in intense verbal battles. 
+    The "Isabuhay" tournament is FlipTop's annual, most prestigious competition, crowning the top battle MC each year.</p>
+</div>
+  
+  
+<div class="container">
+    <div class="mc-card" onclick="showModal('The first Isabuhay champ with his unique style called- Alien Rap Style.')">
+        <img src="images (12).jpeg" alt="MC 1 Picture Placeholder">
+        <h2>Isabuhay 2013: Aklas</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('The aggressive Man')">
+        <img src="images (11).jpeg" alt="MC 2 Picture Placeholder">
+        <h2>Isabuhay 2014: Batas</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('THE ONE AND ONLY BACK TO BACK 2× ISABUHAY CHAMPION')">
+        <img src="images (11).jpeg" alt="MC 3 Picture Placeholder">
+        <h2>Isabuhay 2015: Batas</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Loonie, one of FlipTop legends, won 2016.')">
+        <img src="download.jpeg" alt="MC 4 Picture Placeholder">
+        <h2>Isabuhay 2016: Loonie</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Mhot rose to fame as the 2017 champion.')">
+        <img src="download (1).jpeg" alt="MC 5 Picture Placeholder">
+        <h2>Isabuhay 2017: Mhot</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Sheyee captured the Isabuhay title in 2018.')">
+        <img src="images (6).jpeg" alt="MC 6 Picture Placeholder">
+        <h2>Isabuhay 2018: Shehyee</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Sixtreath took the crown in 2019.')">
+        <img src="download (2).jpeg" alt="MC 7 Picture Placeholder">
+        <h2>Isabuhay 2019: Sixtreath</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Mzhayt reigned supreme in 2020.')">
+        <img src="images (9).jpeg" alt="MC 8 Picture Placeholder">
+        <h2>Isabuhay 2020: Mzhayt</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('J Blaque claimed the Isabuhay title in 2021.')">
+        <img src="images (8).jpeg" alt="MC 9 Picture Placeholder">
+        <h2>Isabuhay 2021: J Blaque</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Pistolero conquered the 2022 Isabuhay.')">
+        <img src="images (7).jpeg" alt="MC 10 Picture Placeholder">
+        <h2>Isabuhay 2022: Pistolero</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('Invictus dominated the 2023 tournament.')">
+        <img src="images (5).jpeg" alt="MC 11 Picture Placeholder">
+        <h2>Isabuhay 2023: Invictus</h2>
+    </div>
+    <div class="mc-card" onclick="showModal('GL is the reigning 2024 Isabuhay Champion.')">
+        <img src="images (4).jpeg" alt="MC 12 Picture Placeholder">
+        <h2>Isabuhay 2024: GL</h2>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<footer>
+    Website by Alforja Filo Moreno | FlipTop fan project
+</footer>
+
+<script>
+function showModal(text) {
+    document.getElementById('modalText').innerText = text;
+    document.getElementById('myModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('myModal').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById('myModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
